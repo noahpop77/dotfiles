@@ -3,11 +3,11 @@ I really hate setting things up more than once so its time to do things properly
 # VIM Keybinds
 
 CTRL + p
-    Opens telescope for fuzzy file search
+- Opens telescope for fuzzy file search
 
 CTRL + l
-    Opens fuzzy text searching across project
+- Opens fuzzy text searching across project
 
 CTRL + n
-    Toggles Neotree folder tree on the left of the screen
+- Toggles Neotree folder tree on the left of the screen
 
