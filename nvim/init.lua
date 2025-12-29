@@ -24,7 +24,25 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
-    { 'ribru17/bamboo.nvim', lazy = false, priority = 1000, config = function() require('bamboo').setup{}; require('bamboo').load() end },
+    -- { 'ribru17/bamboo.nvim', lazy = false, priority = 1000, config = function() require('bamboo').setup{}; require('bamboo').load() end },
+    {
+      "ribru17/bamboo.nvim",
+      lazy = false,
+      priority = 1000,
+      config = function()
+        require("bamboo").setup({
+          transparent = true,
+        })
+        require("bamboo").load()
+
+        -- enforce transparency (bamboo sometimes re-applies bg)
+        vim.cmd([[
+          highlight Normal guibg=NONE ctermbg=NONE
+          highlight NormalNC guibg=NONE ctermbg=NONE
+          highlight EndOfBuffer guibg=NONE ctermbg=NONE
+        ]])
+      end,
+    },
     { 'nvim-telescope/telescope.nvim', tag = 'v0.2.0', dependencies = { 'nvim-lua/plenary.nvim' } },
     -- { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate", lazy = false },
     {
