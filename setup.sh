@@ -9,6 +9,7 @@ cp -r nvim ~/.config/
 echo "---neovim config copied to ~/.config/"
 
 PACKAGES=(
+  npm
   curl
   ripgrep
   git
@@ -28,3 +29,6 @@ if [ ${#NEEDED[@]} -gt 0 ]; then
 else
     echo "---All packages already installed"
 fi
+
+# For the nvim config. Is a requirement for treesitter
+sudo npm install -g tree-sitter-cli

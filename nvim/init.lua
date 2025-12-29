@@ -26,23 +26,39 @@ require("lazy").setup({
   spec = {
     { 'ribru17/bamboo.nvim', lazy = false, priority = 1000, config = function() require('bamboo').setup{}; require('bamboo').load() end },
     { 'nvim-telescope/telescope.nvim', tag = 'v0.2.0', dependencies = { 'nvim-lua/plenary.nvim' } },
+    -- { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate", lazy = false },
     {
-        'nvim-treesitter/nvim-treesitter',
-        lazy = false,        -- load immediately
-        build = ':TSUpdate', -- run parser update on install/update
-        config = function()
-            require('nvim-treesitter.configs').setup {
-                ensure_installed = { "c", "cpp", "lua", "python", "go" },
-                highlight = { enable = true },
-                indent = { enable = true },
-            }
-        end,
-    }
-    
+      'nvim-treesitter/nvim-treesitter',
+      lazy = false,          -- load immediately
+      build = ':TSUpdate',   -- run parser update on install/update
+      config = function()
+        -- Safe require so it doesn’t fail if plugin isn’t installed yet
+        local ok, ts = pcall(require, 'nvim-treesitter.configs')
+        if not ok then
+          vim.notify("nvim-treesitter not installed yet!", vim.log.levels.WARN)
+          return
+        end
+
+        ts.setup({
+          ensure_installed = { "lua", "c", "cpp", "go", "python" },
+          auto_install = true,
+          highlight = { enable = true },
+          indent = { enable = true },
+        })
+      end,
+    },
   },
   install = { colorscheme = { "bamboo" } },
   checker = { enabled = true },
 })
+
+-- local config = require("nvim-treesitter.configs")
+-- config.setup({
+--     ensure_installed = {"lua", "c", "cpp", "go", "python"},
+--     auto_install = true,
+--     highlight = { enable = true },
+--     indent = { enable = true },
+-- })
 
 local builtin = require("telescope.builtin")
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})

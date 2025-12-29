@@ -1,0 +1,79 @@
+-- ========================
+-- Basic Tab Configuration
+-- ========================
+vim.opt.tabstop = 4        -- Number of spaces a tab counts for
+vim.opt.shiftwidth = 4     -- Number of spaces to use for auto-indent
+vim.opt.expandtab = true   -- Convert tabs to spaces
+vim.opt.smartindent = true -- Auto-indent new lines nicely
+
+-- ========================
+-- Bootstrap lazy.nvim
+-- ========================
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "--branch=stable",
+    "https://github.com/folke/lazy.nvim.git",
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- ========================
+-- Plugin Setup
+-- ========================
+require("lazy").setup({
+  spec = {
+    -- Bamboo colorscheme
+    { 
+      'ribru17/bamboo.nvim',
+      lazy = false,
+      priority = 1000,
+      config = function()
+        require('bamboo').setup{}
+        require('bamboo').load()
+      end
+    },
+
+    -- Telescope
+    {
+      'nvim-telescope/telescope.nvim',
+      tag = 'v0.2.0',
+      dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+
+    -- Treesitter
+    {
+      'nvim-treesitter/nvim-treesitter',
+      lazy = false, -- load immediately
+      build = function()
+        vim.cmd("TSUpdate") -- update/install parsers after plugin install
+      end,
+      config = function()
+        require('nvim-treesitter.configs').setup{
+          ensure_installed = { "lua", "c", "cpp", "python", "go" },
+          highlight = { enable = true },
+          indent = { enable = true },
+          auto_install = true,
+        }
+      end
+    },
+  },
+  install = { colorscheme = { "bamboo" } },
+  checker = { enabled = true }, -- automatically check for plugin updates
+})
+
+-- ========================
+-- Telescope Keymaps
+-- ========================
+local builtin = require("telescope.builtin")
+vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+vim.keymap.set('n', '<C-l>', builtin.live_grep, {})
+
+-- ========================
+-- Enable Colorscheme
+-- ========================
+vim.cmd.colorscheme("bamboo")
