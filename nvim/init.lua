@@ -22,15 +22,25 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    -- add your plugins here
     { 'ribru17/bamboo.nvim', lazy = false, priority = 1000, config = function() require('bamboo').setup{}; require('bamboo').load() end },
-    { 'nvim-telescope/telescope.nvim', tag = 'v0.2.0', dependencies = { 'nvim-lua/plenary.nvim' } }
+    { 'nvim-telescope/telescope.nvim', tag = 'v0.2.0', dependencies = { 'nvim-lua/plenary.nvim' } },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        lazy = false,        -- load immediately
+        build = ':TSUpdate', -- run parser update on install/update
+        config = function()
+            require('nvim-treesitter.configs').setup {
+                ensure_installed = { "c", "cpp", "lua", "python", "go" },
+                highlight = { enable = true },
+                indent = { enable = true },
+            }
+        end,
+    }
+    
   },
   install = { colorscheme = { "bamboo" } },
-  -- automatically check for plugin updates
   checker = { enabled = true },
 })
 
