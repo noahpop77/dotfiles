@@ -13,3 +13,10 @@ CTRL + l
 CTRL + n
     Toggles Neotree folder tree on the left of the screen
 
+------------
+VIM Behavior
+------------
+
+Neo Tree
+
+    Due to Neotree some files in the tree will show up as an alt color (red, orange, whatever). This is because they were not pushed via git yet. It will track unpushed changes in files and show you what needs to be pushed in the tree itself which is cool
