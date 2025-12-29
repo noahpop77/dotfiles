@@ -1,0 +1,13 @@
+-- Tab Configuration - Makes it use 4 spaces for a tab instead of default or 8 or whatever
+vim.opt.tabstop = 4        -- how many spaces a tab counts for
+vim.opt.shiftwidth = 4     -- how many spaces to use for autoindent
+vim.opt.expandtab = true   -- convert tabs to spaces
+vim.opt.smartindent = true -- optional: auto-indent new lines nicely
+
+-- Wraps cursor upon reaching the end
+vim.opt.whichwrap:append("<,>,h,l,[,]")
+
+-- Word wrapping
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.whichwrap:append("<,>,h,l")
