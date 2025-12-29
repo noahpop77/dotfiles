@@ -5,10 +5,13 @@ set -e
 sudo cp gitupdate /usr/bin/
 echo "---gitupdate copied to /usr/bin/"
 
+cp -r nvim ~/.config/
+echo "---neovim config copied to ~/.config/"
+
 PACKAGES=(
   curl
+  ripgrep
   git
-  neovim
   htop
   cmatrix
 )
