@@ -95,9 +95,12 @@ require("lazy").setup({
 })
 
 local builtin = require("telescope.builtin")
-    vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-    vim.keymap.set('n', '<C-l>', builtin.live_grep, {})
+vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+vim.keymap.set('n', '<C-l>', builtin.live_grep, {})
+-- vim.keymap.set('n', '<C-n>', ':Neotree<CR>', {})
+vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { silent = true })
 
-    -- Enable the colorscheme
-    -- Color Scheme is from https://github.com/ribru17/bamboo.nvim
-    vim.cmd.colorscheme("bamboo")
+
+-- Enable the colorscheme
+-- Color Scheme is from https://github.com/ribru17/bamboo.nvim
+vim.cmd.colorscheme("bamboo")

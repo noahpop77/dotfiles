@@ -27,8 +27,14 @@ if [ ${#NEEDED[@]} -gt 0 ]; then
     sudo apt update
     sudo apt install -y "${NEEDED[@]}"
 else
-    echo "---All packages already installed"
+    echo "---All packages already installed..."
 fi
 
 # For the nvim config. Is a requirement for treesitter
-sudo npm install -g tree-sitter-cli
+if ! command -v tree-sitter &>/dev/null; then
+    sudo npm install -g tree-sitter-cli
+else
+    echo "---tree-sitter-cli is already installed, skipping..."
+fi
+
+
