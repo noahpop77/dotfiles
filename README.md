@@ -44,7 +44,18 @@ While hovering over a code piece gd is "go to definition"
 
 Due to Neotree some files in the tree will show up as an alt color (red, orange, whatever). This is because they were not pushed via git yet. It will track unpushed changes in files and show you what needs to be pushed in the tree itself which is cool
 
+### Project Structure
 
+This is what the basic structure of the neovim configs look like. The `nvim` folder should be placed inside of the users `.config/` directory.
 
+```
+  ~/dotfiles
+    nvim <- Main neovim config folder
+   │  lua <- Place where all you lua configs go
+   │ │  plugins <- Place where all your individual plugins go
+   │ │ └  pluginname.lua
+   │ └  vim-options.lua
+   └   init.lua 
+```
 
 # Tha-tha-tha-tha. Thats All Folks
