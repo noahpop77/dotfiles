@@ -36,15 +36,17 @@ return {
     {
         "neovim/nvim-lspconfig",
         config = function()
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
             --- THIS IS WHERE YOU ADD MORE LSPS IF YOU WANT
-            vim.lsp.config("bashls", {})
-            vim.lsp.config("clangd", {})
-            vim.lsp.config("gopls", {})
+            vim.lsp.config("bashls", { capabilities = capabilities })
+            vim.lsp.config("clangd", { capabilities = capabilities })
+            vim.lsp.config("gopls", { capabilities = capabilities })
             -- vim.lsp.config("lua_ls", { settings = { Lua = { diagnostics = { globals = { "vim" },},},},})
-            vim.lsp.config("pyright", {})
+            vim.lsp.config("pyright", { capabilities = capabilities })
 
 
             vim.lsp.config("lua_ls", {
+                capabilities = capabilities,
                 settings = {
                     Lua = {
                         runtime = {version = "LuaJIT"},
