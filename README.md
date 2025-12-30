@@ -50,12 +50,12 @@ This is what the basic structure of the neovim configs look like. The `nvim` fol
 
 ```
  (D) ~/dotfiles
-   (D) nvim <- Main neovim config folder
-   │ (D) lua <- Place where all you lua configs go
-   │ │ (D) plugins <- Place where all your individual plugins go
-   │ │ └ (F) pluginname.lua
-   │ └ (F) vim-options.lua
-   └  (F) init.lua 
+   (D) nvim             <- Main neovim config folder
+   │ (D) lua            <- Place where all you lua configs go
+   │ │ (D) plugins      <- Place where all your individual plugins go
+   │ │ └ (F) pluginname.lua     <- Actual plugin file containing plugin config
+   │ └ (F) vim-options.lua      <- Contains general nvim options
+   └  (F) init.lua              <- Entry point for nvim configs
 
 (D) = Directory
 (F) = File
