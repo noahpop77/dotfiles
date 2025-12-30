@@ -49,16 +49,16 @@ Due to Neotree some files in the tree will show up as an alt color (red, orange,
 This is what the basic structure of the neovim configs look like. The `nvim` folder should be placed inside of the users `.config/` directory.
 
 ```
- D ~/dotfiles
-   D nvim <- Main neovim config folder
-   │ D lua <- Place where all you lua configs go
-   │ │ D plugins <- Place where all your individual plugins go
-   │ │ └ F pluginname.lua
-   │ └ F vim-options.lua
-   └  F init.lua 
+ (D) ~/dotfiles
+   (D) nvim <- Main neovim config folder
+   │ (D) lua <- Place where all you lua configs go
+   │ │ (D) plugins <- Place where all your individual plugins go
+   │ │ └ (F) pluginname.lua
+   │ └ (F) vim-options.lua
+   └  (F) init.lua 
 
-D = Directory
-F = File
+(D) = Directory
+(F) = File
 ```
 
 # Tha-tha-tha-tha. Thats All Folks
