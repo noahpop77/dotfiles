@@ -1,5 +1,5 @@
 # My Configs
-I really hate setting things up more than once so its time to do things properly and version control my config files.
+I really hate setting things up more than once so its time to do things properly and version control my config files
 
 # VIM Keybinds
 
@@ -26,7 +26,7 @@ If in normal mode you type this it will reindent everything correctly. IT IS GOD
 ### CA
 > Code Action
 
-If you use `shift -> c -> a` so basically `CA` while hovering over a block of code that has an error it will suggesst possible fixes and depending on the LSP maybe even perform the fix.
+If you use `shift -> c -> a` so basically `CA` while hovering over a block of code that has an error it will suggesst possible fixes and depending on the LSP maybe even perform the fix
 
 ### K
 > Documentation Block
@@ -53,7 +53,7 @@ You will need to install the linter/formatter itself using the `:Mason` menu and
 
 ### Project Structure
 
-This is what the basic structure of the neovim configs look like. The `nvim` folder should be placed inside of the users `.config/` directory.
+This is what the basic structure of the neovim configs look like. The `nvim` folder should be placed inside of the users `.config/` directory
 
 ```
  (D) ~/dotfiles
@@ -67,5 +67,10 @@ This is what the basic structure of the neovim configs look like. The `nvim` fol
 (D) = Directory
 (F) = File
 ```
+
+# References
+
+Typecraft made some amazing videos and this is what I followed to create my base configuration:
+https://www.youtube.com/playlist?list=PLsz00TDipIffreIaUNk64KxTIkQaGguqn
 
 # Tha-tha-tha-tha. Thats All Folks
