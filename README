@@ -13,6 +13,9 @@ CTRL + l
 CTRL + n
     Toggles Neotree folder tree on the left of the screen
 
+gg=G
+    If in normal mode you type this it will reindent everything correctly. IT IS GOD TIER
+
 ------------
 VIM Behavior
 ------------
