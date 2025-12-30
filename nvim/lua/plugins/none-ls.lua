@@ -14,7 +14,7 @@ return {
                 null_ls.builtins.formatting.clang_format,   -- C/C++ Formatter
 			},
 		})
-
+        
 		vim.keymap.set("n", "GF", vim.lsp.buf.format, {})
 	end,
 }

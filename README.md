@@ -47,6 +47,10 @@ Using `shift + g + f` you can apply formatting using none-ls (prev/historically 
 
 Due to Neotree some files in the tree will show up as an alt color (red, orange, whatever). This is because they were not pushed via git yet. It will track unpushed changes in files and show you what needs to be pushed in the tree itself which is cool
 
+### Linters/Formatters
+
+You will need to install the linter/formatter itself using the `:Mason` menu and then include it in the `nvim/lua/plugins/none-ls.lua` like the rest
+
 ### Project Structure
 
 This is what the basic structure of the neovim configs look like. The `nvim` folder should be placed inside of the users `.config/` directory.
