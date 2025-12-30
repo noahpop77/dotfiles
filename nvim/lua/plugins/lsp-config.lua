@@ -40,8 +40,22 @@ return {
             vim.lsp.config("bashls", {})
             vim.lsp.config("clangd", {})
             vim.lsp.config("gopls", {})
-            vim.lsp.config("lua_ls", { settings = { Lua = { diagnostics = { globals = { "vim" },},},},})
+            -- vim.lsp.config("lua_ls", { settings = { Lua = { diagnostics = { globals = { "vim" },},},},})
             vim.lsp.config("pyright", {})
+
+
+            vim.lsp.config("lua_ls", {
+                settings = {
+                    Lua = {
+                        runtime = {version = "LuaJIT"},
+                        diagnostics = {
+                            globals = { "vim" },
+                        },
+                        workspace = { checkThirdParty = false },
+                        telemetry = { enable = false },
+                    },
+                },
+            })
 
             vim.diagnostic.config({
                 virtual_text = true,

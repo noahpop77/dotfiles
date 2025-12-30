@@ -11,8 +11,8 @@ return {
         end
 
         ts.setup({
-            ensure_installed = { "lua", "c", "cpp", "go", "python" },
-            auto_install = true,
+            --- ensure_installed = { "lua", "c", "cpp", "go", "python" },
+            auto_install = true, --- Auto installs when we open a file it doesnt have an LSP for 
             highlight = { enable = true },
             indent = { enable = true },
         })

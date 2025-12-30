@@ -38,6 +38,9 @@ While hovering over a code piece if you press `K` or `shift + k` it will offer y
 
 While hovering over a code piece gd is "go to definition"
 
+### GF
+Using `shift + g + f` you can apply formatting using none-ls (prev/historically null-ls) which is a language server wrapper almost for linters and formatters
+
 # VIM Behavior
 
 ### Neo Tree

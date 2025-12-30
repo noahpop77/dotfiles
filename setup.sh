@@ -9,6 +9,7 @@ cp -r nvim ~/.config/
 echo "---neovim config copied to ~/.config/"
 
 PACKAGES=(
+  python3.12-venv
   golang-go
   fdclone
   npm
