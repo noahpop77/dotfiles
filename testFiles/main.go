@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"internal/fmtsort"
+	// "internal/fmtsort"
 )
 
 /*

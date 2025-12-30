@@ -51,6 +51,12 @@ Due to Neotree some files in the tree will show up as an alt color (red, orange,
 
 You will need to install the linter/formatter itself using the `:Mason` menu and then include it in the `nvim/lua/plugins/none-ls.lua` like the rest
 
+### Appearance
+
+All theme related things are in `bamboo.lua`
+- The grey column denoting character count per line
+- General color themes and schemes
+
 ### Project Structure
 
 This is what the basic structure of the neovim configs look like. The `nvim` folder should be placed inside of the users `.config/` directory
