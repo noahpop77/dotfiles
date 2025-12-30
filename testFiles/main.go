@@ -1,7 +1,6 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 )
 
@@ -18,17 +17,6 @@ import (
 */
 
 func main() {
-	printBanner()
-
-	// Define a flag
-	echo := flag.String("echo", "default", "Echos your argument to the screen")
-	userCount := flag.Int("users", 100, "Number of simulated users")
-
-	// Parse the flags
-	flag.Parse()
-
-	// Print the value of the flag
-	fmt.Printf("Flags used:\nName: %s\nUser Count: %d\n", *echo, *userCount)
-	counter := *userCount
-	QueueUpProfile(*userCount, counter)
+	fmt.Printf("BOBBY")
+	bbc.Printf("BOBBY")
 }
