@@ -19,3 +19,6 @@ require("vim-options")
 
 -- Loads the plugins in the lua/plugins/ directory
 require("lazy").setup("plugins")
+
+
+-- pulled
