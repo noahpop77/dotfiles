@@ -73,4 +73,11 @@ This is what the basic structure of the neovim configs look like. The `nvim` fol
 Typecraft made some amazing videos and this is what I followed to create my base configuration:
 https://www.youtube.com/playlist?list=PLsz00TDipIffreIaUNk64KxTIkQaGguqn
 
+### Future?
+
+If I ever need functionality for a debugger in my environment I can follow this video:
+https://youtu.be/oYzZxi3SSnM
+
+Otherwise I think its time to freestyle from here
+
 # Tha-tha-tha-tha. Thats All Folks
