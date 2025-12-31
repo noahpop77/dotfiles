@@ -12,3 +12,8 @@ vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.whichwrap:append("<,>,h,l")
 
+-- Line numbers on the side of the screen
+vim.opt.number = true          -- Show absolute line number on current line
+vim.opt.relativenumber = true  -- Show relative numbers on other lines
+
+
