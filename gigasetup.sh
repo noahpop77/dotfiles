@@ -2,11 +2,35 @@
 
 set -e
 
-sudo cp gitupdate /usr/bin/
-echo "---gitupdate copied to /usr/bin/"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    GITPATH="/usr/local/bin/"
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    OS="Linux"
+    # Check for apt (Debian/Ubuntu family)
+    if command -v apt-get >/dev/null 2>&1; then
+        PKG_MANAGER="apt"
+        PKG_UPDATE="sudo apt update"
+        PKG_INSTALL="sudo apt install -y"
+        SUDO="sudo"
+    else
+        echo "Unsupported Linux distribution (only Debian/Ubuntu family supported)"
+        exit 1
+    fi
+else
+    echo "Unsupported OS: $OSTYPE"
+    exit 1
+fi
+
+
+sudo cp gitupdate $GITPATH
+echo "---gitupdate copied to $GITPATH"
 
 cp -r nvim ~/.config/
 echo "---neovim config copied to ~/.config/"
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    exit 0
+fi
 
 PACKAGES=(
   imagemagick       # Used for Image previews in neovim
