@@ -41,6 +41,7 @@ if ! grep -q "alias ls='ls -GF'" "$CONFIG_FILE" 2>/dev/null; then
         echo "# Enhanced ls with colors & indicators (added by setup script)"
         echo "alias ls='ls -GF'"
         echo "alias ll='ls -lGFho'"
+        echo "alias n='nvim'"
     } >> "$CONFIG_FILE"
     echo "--- Added improved ls aliases to $CONFIG_FILE"
 else
@@ -119,15 +120,6 @@ if ! command -v tree-sitter &>/dev/null; then
     $SUDO npm install -g tree-sitter-cli
 else
     echo "--- tree-sitter-cli is already installed, skipping..."
-fi
-
-
-# Reload shell configuration so changes take effect immediately
-if [[ -f "$CONFIG_FILE" ]]; then
-    source "$CONFIG_FILE"
-    echo "--- Reloaded $CONFIG_FILE — your new aliases and changes are now active!"
-else
-    echo "--- $CONFIG_FILE not found — open a new terminal to apply changes"
 fi
 
 
