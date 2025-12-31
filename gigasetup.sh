@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Quirks: For the usage of this script on mac it will only copy the gitupdate
+#           and neovim config to the desired locations. The package downloading
+#           is not currently configured
+
 set -e
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
