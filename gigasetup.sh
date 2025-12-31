@@ -4,8 +4,6 @@
 #         and neovim config to the desired locations. The package downloading
 #         is not currently configured. 
 #
-# TODO: At some point add dynamic package downloading for MAC like we have for
-#       Linux.
 
 set -e
 
@@ -13,10 +11,29 @@ set -e
 if [[ "$OSTYPE" == "darwin"* ]]; then
     GITPATH="/usr/local/bin/"
     CONFIG_FILE="$HOME/.zshrc"
+    OS="macOS"
+    PKG_MANAGER="brew"
+    PKG_UPDATE="brew update"
+    PKG_INSTALL="brew install --quiet"
+    SUDO=""
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     CONFIG_FILE="$HOME/.bashrc"
     OS="Linux"
+    if command -v apt-get >/dev/null 2>&1; then
+        PKG_MANAGER="apt"
+        PKG_UPDATE="sudo apt update"
+        PKG_INSTALL="sudo apt install -y"
+        SUDO="sudo"
+    else
+        echo "Unsupported Linux distribution (only Debian/Ubuntu family supported)"
+        exit 1
+    fi
+else
+    echo "Unsupported OS: $OSTYPE"
+    exit 1
 fi
+
+echo "---Detected OS: $OS"
 
 # Adds a built in beautified `ls` and `ls -la` command
 # Add only if not present
@@ -29,7 +46,7 @@ if ! grep -q "alias ls='ls -GF'" "$CONFIG_FILE" 2>/dev/null; then
     } >> "$CONFIG_FILE"
     echo "→ Added improved ls aliases to $CONFIG_FILE"
 else
-    echo "→ Aliases already in $CONFIG_FILE"
+    echo "---Aliases already in $CONFIG_FILE"
 fi
 
 # Copies gitupdate script to the OS specific bin directory
@@ -40,46 +57,48 @@ echo "---gitupdate copied to $GITPATH"
 cp -r nvim ~/.config/
 echo "---neovim config copied to ~/.config/"
 
-# TODO: Temp stop gap since the packages are not installed for mac dynamically
-#       This just exits out early on MAC before it gets to that part.
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    exit 0
-fi
-
-
 PACKAGES=(
-  imagemagick       # Used for Image previews in neovim
-  python3.12-venv   # Some plugins require this as a dep
-  golang-go         # Required for go linters/formatters/and treesitter
-  fdclone           # No idea
-  npm               # Required to build some plugins for nvim
-  curl              # Normal dep
-  ripgrep           # Required for CTRL + L live grep functionality
-  git               # Obv
-  htop              # Fun
-  cmatrix           # Fun
+  imagemagick # Used for Image previews in neovim
+#  python3.12-venv # Some plugins require this as a dep
+  go
+  golang-go # Required for go linters/formatters/and treesitter
+  fdclone # No idea
+  npm # Required to build some plugins for nvim
+  curl # Normal dep
+  ripgrep # Required for CTRL + L live grep functionality
+  git # Obv
+  htop # Fun
+  cmatrix # Fun
 )
 
-# Dynamic package installation based off whats already on the system
 NEEDED=()
 
 for pkg in "${PACKAGES[@]}"; do
-    dpkg -s "$pkg" >/dev/null 2>&1 || NEEDED+=("$pkg")
+    if [[ $OS == "macOS" ]]; then
+        # Homebrew check
+        brew list "$pkg" >/dev/null 2>&1 || NEEDED+=("$pkg")
+    else
+        # apt check
+        dpkg -s "$pkg" >/dev/null 2>&1 || NEEDED+=("$pkg")
+    fi
 done
 
 if [ ${#NEEDED[@]} -gt 0 ]; then
-    sudo apt update
-    sudo apt install -y "${NEEDED[@]}"
+    echo "--- Installing missing packages: ${NEEDED[*]}"
+    $PKG_UPDATE
+    $PKG_INSTALL "${NEEDED[@]}"
 else
     echo "---All packages already installed..."
 fi
 
-# For the nvim config. Is a requirement for treesitter
-# Runs the npm install for it and skips it if its already installed
-# Added this cause npm takes forever and skipping it is NICE
+# ── tree-sitter-cli (npm global) ────────────────────────────────────────────
+
 if ! command -v tree-sitter &>/dev/null; then
-    sudo npm install -g tree-sitter-cli
+    echo "--- Installing tree-sitter-cli..."
+    $SUDO npm install -g tree-sitter-cli
 else
     echo "---tree-sitter-cli is already installed, skipping..."
 fi
 
+echo ""
+echo "--- Setup complete!"
