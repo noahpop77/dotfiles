@@ -41,6 +41,11 @@ While hovering over a code piece gd is "go to definition"
 ### GF
 Using `shift + g + f` you can apply formatting using none-ls (prev/historically null-ls) which is a language server wrapper almost for linters and formatters
 
+### gc
+> Great comments (Mass comment and uncomment)
+
+This keybind basically lets you toggle comments on a block of code selected in visual mode all at once
+
 # VIM Behavior
 
 ### Neo Tree
