@@ -42,7 +42,7 @@ if ! grep -q "alias ls='ls -GF'" "$CONFIG_FILE" 2>/dev/null; then
         echo ""
         echo "# Enhanced ls with colors & indicators (added by setup script)"
         echo "alias ls='ls -GF'"
-        echo "alias ll='ls -lGFho'"
+        echo "alias ll='ls -lGFhoa'"
         echo "alias n='nvim'"
     } >> "$CONFIG_FILE"
     echo "--- Added improved ls aliases to $CONFIG_FILE"

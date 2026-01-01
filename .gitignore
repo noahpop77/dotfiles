@@ -1,0 +1,10 @@
+# === All hidden files/folders ===
+.*
+!.gitignore
+
+# === Optional: also ignore common macOS junk ===
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
