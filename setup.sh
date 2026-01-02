@@ -18,6 +18,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     SUDO=""
     GITPATH="$(brew --prefix)/bin/"  # /opt/homebrew/bin or /usr/local/bin
     CONFIG_FILE="$HOME/.zshrc"
+    LS_ALIAS="ls -GF"
+    LL_ALIAS="ls -lGFhoa"
 else
     OS="Linux"
     if command -v apt-get >/dev/null 2>&1; then
@@ -27,10 +29,14 @@ else
         SUDO="sudo"
         GITPATH="/usr/local/bin/"
         CONFIG_FILE="$HOME/.bashrc"
+
     else
         echo "Unsupported Linux distribution (only Debian/Ubuntu family supported)"
         exit 1
     fi
+
+    LS_ALIAS="ls --color=auto -F"
+    LL_ALIAS="ls -l --color=auto -Fhoa"
 fi
 
 echo "--- Detected OS: $OS"
@@ -41,8 +47,8 @@ if ! grep -q "alias ls='ls -GF'" "$CONFIG_FILE" 2>/dev/null; then
     {
         echo ""
         echo "# Enhanced ls with colors & indicators (added by setup script)"
-        echo "alias ls='ls -GF'"
-        echo "alias ll='ls -lGFhoa'"
+        echo "alias ls='$LS_ALIAS'"
+        echo "alias ll='$LL_ALIAS'"
         echo "alias n='nvim'"
     } >> "$CONFIG_FILE"
     echo "--- Added improved ls aliases to $CONFIG_FILE"
