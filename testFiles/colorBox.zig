@@ -12,7 +12,7 @@ const glfw = @cImport({
 pub fn main() void {
     if (glfw.glfwInit() == 0) return;
     defer glfw.glfwTerminate();
-    
+         
     // Creates the window of specified size with specified name
     const window = glfw.glfwCreateWindow(640, 480, "Red Window", null, null);
     if (window == null) return;

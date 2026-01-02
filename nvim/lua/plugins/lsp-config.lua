@@ -28,6 +28,7 @@ return {
                 "gopls",
                 "lua_ls",
                 "pyright",
+                "zls",
             },
             automatic_enable = true,
         },
@@ -43,6 +44,13 @@ return {
             vim.lsp.config("gopls", { capabilities = capabilities })
             -- vim.lsp.config("lua_ls", { settings = { Lua = { diagnostics = { globals = { "vim" },},},},})
             vim.lsp.config("pyright", { capabilities = capabilities })
+            --- vim.lsp.config("zls", { capabilities = capabilities })
+            vim.lsp.config("zls", {
+                capabilities = capabilities,
+                cmd = { "zls", "--zig-exe-path", "/usr/bin/zig" },
+                filetypes = { "zig", "zir" },
+                root_dir = require("lspconfig.util").root_pattern("build.zig", "zls.json", ".git"),
+            })
 
 
             vim.lsp.config("lua_ls", {
