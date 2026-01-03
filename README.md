@@ -91,6 +91,13 @@ the screen.
 zig run main.zig
 ```
 
+# Useful Tools
+
+```bash
+btop
+```
+MAD PRETTY and useful resource monitor.
+
 # References
 
 Typecraft made some amazing videos and this is what I followed to create my base configuration:
