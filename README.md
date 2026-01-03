@@ -79,6 +79,18 @@ This is what the basic structure of the neovim configs look like. The `nvim` fol
 (F) = File
 ```
 
+# ZIG Notepad
+
+```zig
+zig build-exe testFiles/colorBox.zig -framework OpenGL -lglfw
+```
+This builds the openGL based test project that opens up a colored box window on
+the screen.
+
+```zig
+zig run main.zig
+```
+
 # References
 
 Typecraft made some amazing videos and this is what I followed to create my base configuration:
