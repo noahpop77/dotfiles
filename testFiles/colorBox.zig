@@ -2,9 +2,15 @@ const std = @import("std");
 
 // Imports the legacy version of OpenGL
 const gl = @cImport({
-    @cInclude("OpenGL/gl.h");
+    //@cInclude("OpenGL/gl.h");
+    if (@import("builtin").target.os.tag == .macos) {
+        @cInclude("OpenGL/gl.h");
+    } else {
+        @cInclude("GL/gl.h");
+    }
 });
 // Some OpenGL requirement to use it or something
+
 const glfw = @cImport({
     @cInclude("GLFW/glfw3.h");
 });
@@ -12,7 +18,7 @@ const glfw = @cImport({
 pub fn main() void {
     if (glfw.glfwInit() == 0) return;
     defer glfw.glfwTerminate();
-         
+    
     // Creates the window of specified size with specified name
     const window = glfw.glfwCreateWindow(640, 480, "Red Window", null, null);
     if (window == null) return;

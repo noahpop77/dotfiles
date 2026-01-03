@@ -7,7 +7,7 @@ pub fn main() !void {
     // Buffering helps reduce sys calls which are slow
     // Creates a character buffer for use in the writer
     var stdout_buffer: [256]u8 = undefined;
-
+    
     // WRITERS AND HOW THEY WORK -----------------------------------------------
     // These 2 lines compile to the same machine code. The first line is syntax
     // sugar to clean things up and the second line is the more explicit version
