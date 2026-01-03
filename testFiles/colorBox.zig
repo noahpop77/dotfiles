@@ -32,7 +32,7 @@ pub fn main() void {
     // Creates the window of specified size with specified name
     const window = glfw.glfwCreateWindow(640, 480, "Red Window", null, null);
     if (window == null) return;
-
+    
     glfw.glfwMakeContextCurrent(window);
 
     const GL_COLOR_BUFFER_BIT: u32 = 0x00004000;

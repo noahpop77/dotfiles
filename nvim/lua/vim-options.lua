@@ -17,3 +17,6 @@ vim.opt.number = true          -- Show absolute line number on current line
 vim.opt.relativenumber = true  -- Show relative numbers on other lines
 
 
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
