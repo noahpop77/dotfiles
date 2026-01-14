@@ -9,6 +9,10 @@ return {
     lazy = false,
     config = function()
         require("neo-tree").setup({
+            window = {
+                position = "left",
+                width = 25,
+            },
             filesystem = {
                 filtered_items = {
                     visible = true,           -- ← Forces hidden files to be shown by default
