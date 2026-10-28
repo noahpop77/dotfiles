@@ -57,7 +57,19 @@ sudo pacman -S --needed --noconfirm \
     curl \
     go \
     luarocks \
-    npm
+    npm \
+    firefox \
+    qemu-desktop \
+    virt-manager \
+    virt-viewer \
+    libvirt \
+    dnsmasq \
+    iptables-nft \
+    dmidecode \
+    openbsd-netcat \
+    libguestfs \
+    spice-gtk
+
 
 echo "==> Installing AUR packages (sublime-text-4, fdclone)..."
 $AUR_HELPER -S --needed --noconfirm sublime-text-4 fdclone
