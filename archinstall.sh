@@ -56,6 +56,7 @@ sudo pacman -S --needed --noconfirm \
     ripgrep \
     curl \
     go \
+    luarocks \
     npm
 
 echo "==> Installing AUR packages (sublime-text-4, fdclone)..."
