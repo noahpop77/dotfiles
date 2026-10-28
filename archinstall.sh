@@ -117,9 +117,9 @@ if [ -d "$SCRIPT_DIR/Pictures" ]; then
 fi
 
 echo "==> Copying contents of '.config' folder..."
-if [ -d "$SCRIPT_DIR/.config" ]; then
-    mkdir -p ~/.config
-    cp -r "$SCRIPT_DIR/config/." ~/.config/
+if [ -d "$SCRIPT_DIR/config" ]; then
+    rm -rf ~/.config
+    cp -r "$SCRIPT_DIR/config" ~/.config
     echo ".config contents copied successfully."
 fi
 
