@@ -69,6 +69,9 @@ sudo pacman -S --needed --noconfirm \
     openbsd-netcat \
     libguestfs \
     spice-gtk
+    ttf-nerd-fonts-symbols \
+    ttf-nerd-fonts-symbols-mono \
+    ttf-jetbrains-mono-nerd
 
 
 echo "==> Installing AUR packages (sublime-text-4, fdclone)..."
