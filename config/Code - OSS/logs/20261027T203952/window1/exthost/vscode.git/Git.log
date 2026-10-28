@@ -1,0 +1,39 @@
+2026-10-27 20:39:56.452 [info] [main] Log level: Info
+2026-10-27 20:39:56.453 [info] [main] Validating found git in: "git"
+2026-10-27 20:39:56.453 [info] [main] Using git "2.55.0" from "git"
+2026-10-27 20:39:56.453 [info] [Model][doInitialScan] Initial repository scan started
+2026-10-27 20:39:56.453 [info] > git rev-parse --show-toplevel [29ms]
+2026-10-27 20:39:56.459 [info] > git rev-parse --git-dir --git-common-dir --show-superproject-working-tree [3ms]
+2026-10-27 20:39:56.549 [info] [Model][openRepository] Opened repository (path): /home/sawa/Documents/devenv/Olympus
+2026-10-27 20:39:56.549 [info] [Model][openRepository] Opened repository (real path): /home/sawa/Documents/devenv/Olympus
+2026-10-27 20:39:56.549 [info] [Model][openRepository] Opened repository (kind): repository
+2026-10-27 20:39:56.569 [info] > git config --get --local core.virtualfilesystem [13ms]
+2026-10-27 20:39:56.569 [warning] [Git][config] git config failed: Failed to execute git
+2026-10-27 20:39:56.572 [info] > git config --get commit.template [9ms]
+2026-10-27 20:39:56.574 [info] > git rev-parse --show-toplevel [6ms]
+2026-10-27 20:39:56.587 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [7ms]
+2026-10-27 20:39:56.588 [info] > git rev-parse --show-toplevel [3ms]
+2026-10-27 20:39:56.605 [info] > git status -z -uall [7ms]
+2026-10-27 20:39:56.606 [info] > git rev-parse --show-toplevel [14ms]
+2026-10-27 20:39:56.611 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-27 20:39:56.662 [info] > git config --get commit.template [3ms]
+2026-10-27 20:39:56.662 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [13ms]
+2026-10-27 20:39:56.668 [info] > git rev-parse --show-toplevel [58ms]
+2026-10-27 20:39:56.678 [info] > git rev-parse --show-toplevel [6ms]
+2026-10-27 20:39:56.678 [info] > git config --get --local branch.main.vscode-merge-base [11ms]
+2026-10-27 20:39:56.689 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [12ms]
+2026-10-27 20:39:56.689 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [6ms]
+2026-10-27 20:39:56.696 [info] > git rev-parse --show-toplevel [8ms]
+2026-10-27 20:39:56.701 [info] > git merge-base refs/heads/main refs/remotes/origin/main [6ms]
+2026-10-27 20:39:56.712 [info] > git status -z -uall [3ms]
+2026-10-27 20:39:56.712 [info] > git diff --raw --numstat --diff-filter=ADMR -z --find-renames=50% 7c2c76f0b49a62d89417c54595d7b7fef5d1ba1d...refs/remotes/origin/main -- [8ms]
+2026-10-27 20:39:56.713 [info] > git rev-parse --show-toplevel [13ms]
+2026-10-27 20:39:56.718 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [7ms]
+2026-10-27 20:39:56.722 [info] > git rev-parse --show-toplevel [5ms]
+2026-10-27 20:39:56.723 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2026-10-27 20:39:56.943 [info] > git check-ignore -v -z --stdin [2ms]
+2026-10-27 20:39:56.986 [info] > git ls-files --stage -- dbScripts/init.sql [1ms]
+2026-10-27 20:39:56.991 [info] > git show --textconv :dbScripts/init.sql [11ms]
+2026-10-27 20:39:56.993 [info] > git cat-file -s 5d5cfc293a45e2182eb2d3f9e229db89d15b95ea [2ms]
+2026-10-27 20:39:57.021 [info] > git blame --root --incremental 7c2c76f0b49a62d89417c54595d7b7fef5d1ba1d -- dbScripts/init.sql [6ms]
+2026-10-27 20:39:57.079 [info] > git check-ignore -v -z --stdin [1ms]

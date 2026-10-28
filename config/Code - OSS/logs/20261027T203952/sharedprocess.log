@@ -1,0 +1,21 @@
+2026-10-27 20:39:58.984 [info] Getting Manifest... golang.go
+2026-10-27 20:39:58.986 [info] Getting Manifest... ms-python.debugpy
+2026-10-27 20:39:58.987 [info] Getting Manifest... ms-python.python
+2026-10-27 20:39:59.451 [info] Installing extension: golang.go {"productVersion":{"version":"1.131.0","date":"2026-07-28T06:40:51Z"},"pinned":false,"operation":3,"isApplicationScoped":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/sawa/.vscode-oss/extensions/extensions.json","path":"/home/sawa/.vscode-oss/extensions/extensions.json","scheme":"vscode-userdata"},"isBuiltin":false}
+2026-10-27 20:39:59.495 [info] Installing extension: ms-python.debugpy {"productVersion":{"version":"1.131.0","date":"2026-07-28T06:40:51Z"},"pinned":false,"operation":3,"isApplicationScoped":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/sawa/.vscode-oss/extensions/extensions.json","path":"/home/sawa/.vscode-oss/extensions/extensions.json","scheme":"vscode-userdata"},"isBuiltin":false}
+2026-10-27 20:39:59.499 [info] Installing extension: ms-python.python {"productVersion":{"version":"1.131.0","date":"2026-07-28T06:40:51Z"},"pinned":false,"operation":3,"isApplicationScoped":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/sawa/.vscode-oss/extensions/extensions.json","path":"/home/sawa/.vscode-oss/extensions/extensions.json","scheme":"vscode-userdata"},"isBuiltin":false}
+2026-10-27 20:40:01.215 [info] Extension signature verification result for golang.go: Success. Executed: true. Duration: 172ms.
+2026-10-27 20:40:01.300 [info] Extracted extension to file:///home/sawa/.vscode-oss/extensions/golang.go-0.58.0-universal: golang.go
+2026-10-27 20:40:01.317 [info] Renamed to /home/sawa/.vscode-oss/extensions/golang.go-0.58.0-universal
+2026-10-27 20:40:01.335 [info] Marked extension as removed golang.go-0.50.0-universal
+2026-10-27 20:40:01.343 [info] Extension installed successfully: golang.go vscode-userdata:/home/sawa/.vscode-oss/extensions/extensions.json
+2026-10-27 20:40:01.661 [info] Extension signature verification result for ms-python.debugpy: Success. Executed: true. Duration: 163ms.
+2026-10-27 20:40:01.973 [info] Extracted extension to file:///home/sawa/.vscode-oss/extensions/ms-python.debugpy-2026.6.0-linux-x64: ms-python.debugpy
+2026-10-27 20:40:01.986 [info] Renamed to /home/sawa/.vscode-oss/extensions/ms-python.debugpy-2026.6.0-linux-x64
+2026-10-27 20:40:02.001 [info] Marked extension as removed ms-python.debugpy-2025.14.1-linux-x64
+2026-10-27 20:40:02.005 [info] Extension installed successfully: ms-python.debugpy vscode-userdata:/home/sawa/.vscode-oss/extensions/extensions.json
+2026-10-27 20:40:02.237 [info] Extension signature verification result for ms-python.python: Success. Executed: true. Duration: 353ms.
+2026-10-27 20:40:03.295 [info] Extracted extension to file:///home/sawa/.vscode-oss/extensions/ms-python.python-2026.4.0-universal: ms-python.python
+2026-10-27 20:40:03.377 [info] Renamed to /home/sawa/.vscode-oss/extensions/ms-python.python-2026.4.0-universal
+2026-10-27 20:40:03.393 [info] Marked extension as removed ms-python.python-2025.16.0-universal
+2026-10-27 20:40:03.395 [info] Extension installed successfully: ms-python.python vscode-userdata:/home/sawa/.vscode-oss/extensions/extensions.json

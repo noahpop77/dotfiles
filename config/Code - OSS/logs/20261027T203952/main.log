@@ -1,0 +1,7 @@
+2026-10-27 20:39:52.886 [info] StorageMainService: creating application shared storage
+2026-10-27 20:39:52.980 [info] [shared storage] Creating shared storage database at '/home/sawa/.vscode-oss-shared/sharedStorage/state.vscdb' (wasCreated: true)
+2026-10-27 20:39:52.981 [info] [shared storage] Initializing fallback application storage (path: /home/sawa/.config/Code - OSS/User/globalStorage/state.vscdb)
+2026-10-27 20:39:52.990 [info] [shared storage] Fallback application storage initialized with 66 items
+2026-10-27 20:39:52.991 [info] update#setState disabled
+2026-10-27 20:39:52.992 [info] update#ctor - updates are disabled as there is no update URL
+2026-10-27 20:40:11.680 [info] Extension host with pid 4365 exited with code: 0, signal: unknown.

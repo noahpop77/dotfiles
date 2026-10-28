@@ -1,0 +1,31 @@
+2025-09-22 02:42:51.918 [info] Extension host with pid 3340 started
+2025-09-22 02:42:52.020 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-09-22 02:42:52.030 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-09-22 02:42:52.106 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-09-22 02:42:52.187 [info] Eager extensions activated
+2025-09-22 02:42:52.189 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-09-22 02:42:52.191 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-09-22 02:43:57.588 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-09-22 02:44:21.919 [info] ExtensionService#_doActivateExtension ms-python.python, startup: false, activationEvent: 'onWalkthrough:pythonWelcome'
+2025-09-22 02:44:23.525 [error] Error: Extension 'ms-python.python' CANNOT use API proposal: testObserver.
+Its package.json#enabledApiProposals-property declares:  but NOT testObserver.
+ The missing proposal MUST be added and you must start in extension development mode or use the following command line switch: --enable-proposed-api ms-python.python
+	at T (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:106:33255)
+	at get testResults (file:///usr/lib/code/out/vs/workbench/api/node/extensionHostProcess.js:199:105905)
+	at x.activate (/home/sawa/.vscode-oss/extensions/ms-python.python-2025.14.0-universal/out/client/extension.js:2:946549)
+	at /home/sawa/.vscode-oss/extensions/ms-python.python-2025.14.0-universal/out/client/extension.js:2:2457
+	at Array.map (<anonymous>)
+	at v.activateWorkspace (/home/sawa/.vscode-oss/extensions/ms-python.python-2025.14.0-universal/out/client/extension.js:2:2447)
+2025-09-22 02:44:38.503 [info] ExtensionService#_doActivateExtension vscode.terminal-suggest, startup: false, activationEvent: 'onTerminalShellIntegration:*'
+2025-09-22 02:44:56.041 [info] Extension host terminating: renderer closed the MessagePort
+2025-09-22 02:44:56.059 [info] Extension host with pid 3340 exiting with code 0
+2025-09-22 02:44:57.702 [info] Extension host with pid 3901 started
+2025-09-22 02:44:57.719 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-09-22 02:44:57.797 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-09-22 02:44:57.813 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-09-22 02:44:57.892 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-09-22 02:44:58.021 [info] Eager extensions activated
+2025-09-22 02:44:58.038 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-09-22 02:44:58.040 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-09-22 02:45:12.977 [info] Extension host terminating: renderer closed the MessagePort
+2025-09-22 02:45:12.984 [info] Extension host with pid 3901 exiting with code 0

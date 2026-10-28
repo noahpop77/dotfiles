@@ -1,0 +1,11 @@
+2025-12-08 19:55:28.446 [info] Tools environment: GOPATH=/home/sawa/go, GOTOOLCHAIN=auto
+2025-12-08 19:55:28.446 [info] Installing 2 tools at /home/sawa/go/bin
+2025-12-08 19:55:28.446 [info]   gopls
+2025-12-08 19:55:28.446 [info]   staticcheck
+2025-12-08 19:55:28.447 [info] 
+2025-12-08 19:56:07.421 [info] Installing golang.org/x/tools/gopls@latest (/home/sawa/go/bin/gopls) SUCCEEDED
+2025-12-08 19:56:15.537 [info] Installing honnef.co/go/tools/cmd/staticcheck@latest (/home/sawa/go/bin/staticcheck) SUCCEEDED
+2025-12-08 19:56:15.539 [info] 
+2025-12-08 19:56:15.539 [info] All tools successfully installed. You are ready to Go. :)
+2025-12-08 19:56:15.715 [info] Try to start language server - activation (enabled: true)
+2025-12-08 19:56:15.941 [info] Running language server gopls(v0.20.0/go1.25.5 X:nodwarf5)

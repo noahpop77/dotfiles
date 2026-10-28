@@ -1,0 +1,60 @@
+2025-12-08 19:55:07.207 [info] [main] Log level: Info
+2025-12-08 19:55:07.207 [info] [main] Validating found git in: "git"
+2025-12-08 19:55:07.207 [info] [main] Using git "2.52.0" from "git"
+2025-12-08 19:55:07.207 [info] [Model][doInitialScan] Initial repository scan started
+2025-12-08 19:55:07.207 [info] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-12-08 19:55:20.342 [info] [main] Log level: Info
+2025-12-08 19:55:20.342 [info] [main] Validating found git in: "git"
+2025-12-08 19:55:20.342 [info] [main] Using git "2.52.0" from "git"
+2025-12-08 19:55:20.342 [info] [Model][doInitialScan] Initial repository scan started
+2025-12-08 19:55:20.342 [info] > git rev-parse --show-toplevel [13ms]
+2025-12-08 19:55:20.348 [info] > git rev-parse --git-dir --git-common-dir --show-superproject-working-tree [3ms]
+2025-12-08 19:55:20.362 [info] [Model][openRepository] Opened repository (path): /home/sawa/Documents/devenv/Olympus
+2025-12-08 19:55:20.362 [info] [Model][openRepository] Opened repository (real path): /home/sawa/Documents/devenv/Olympus
+2025-12-08 19:55:20.362 [info] [Model][openRepository] Opened repository (kind): repository
+2025-12-08 19:55:20.375 [info] > git rev-parse --show-toplevel [4ms]
+2025-12-08 19:55:20.375 [info] > git config --get commit.template [7ms]
+2025-12-08 19:55:20.388 [info] > git rev-parse --show-toplevel [7ms]
+2025-12-08 19:55:20.392 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [5ms]
+2025-12-08 19:55:20.393 [info] > git rev-parse --show-toplevel [1ms]
+2025-12-08 19:55:20.407 [info] > git status -z -uall [6ms]
+2025-12-08 19:55:20.407 [info] > git rev-parse --show-toplevel [11ms]
+2025-12-08 19:55:20.412 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [5ms]
+2025-12-08 19:55:20.447 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [8ms]
+2025-12-08 19:55:20.454 [info] > git rev-parse --show-toplevel [43ms]
+2025-12-08 19:55:20.463 [info] > git config --get --local branch.main.vscode-merge-base [8ms]
+2025-12-08 19:55:20.463 [warning] [Git][config] git config failed: Failed to execute git
+2025-12-08 19:55:20.469 [info] > git config --get commit.template [23ms]
+2025-12-08 19:55:20.470 [info] > git rev-parse --show-toplevel [9ms]
+2025-12-08 19:55:20.481 [info] > git reflog main --grep-reflog=branch: Created from *. [12ms]
+2025-12-08 19:55:20.487 [info] > git rev-parse --show-toplevel [7ms]
+2025-12-08 19:55:20.488 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-12-08 19:55:20.488 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [13ms]
+2025-12-08 19:55:20.489 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [3ms]
+2025-12-08 19:55:20.504 [info] > git status -z -uall [7ms]
+2025-12-08 19:55:20.504 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [11ms]
+2025-12-08 19:55:20.509 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [6ms]
+2025-12-08 19:55:20.516 [info] > git config --add --local branch.main.vscode-merge-base origin/main [8ms]
+2025-12-08 19:55:20.524 [info] > git config --get commit.template [1ms]
+2025-12-08 19:55:20.530 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2025-12-08 19:55:20.539 [info] > git status -z -uall [5ms]
+2025-12-08 19:55:20.540 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [2ms]
+2025-12-08 19:55:20.552 [info] > git merge-base refs/heads/main refs/remotes/origin/main [5ms]
+2025-12-08 19:55:20.558 [info] > git merge-base refs/heads/main refs/remotes/origin/main [6ms]
+2025-12-08 19:55:20.562 [info] > git diff --name-status -z --diff-filter=ADMR --find-renames=50% 7c2c76f0b49a62d89417c54595d7b7fef5d1ba1d...refs/remotes/origin/main -- [5ms]
+2025-12-08 19:55:20.563 [info] > git diff --name-status -z --diff-filter=ADMR --find-renames=50% 7c2c76f0b49a62d89417c54595d7b7fef5d1ba1d...refs/remotes/origin/main -- [2ms]
+2025-12-08 19:55:20.899 [info] > git check-ignore -v -z --stdin [8ms]
+2025-12-08 19:55:21.608 [info] > git config --get commit.template [5ms]
+2025-12-08 19:55:21.608 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2025-12-08 19:55:21.615 [info] > git status -z -uall [3ms]
+2025-12-08 19:55:21.616 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [1ms]
+2025-12-08 19:55:25.216 [info] > git check-ignore -v -z --stdin [4ms]
+2025-12-08 19:55:25.829 [info] > git check-ignore -v -z --stdin [5ms]
+2025-12-08 19:55:27.309 [info] > git check-ignore -v -z --stdin [5ms]
+2025-12-08 19:55:31.260 [info] > git show --textconv :game_server_service/gameServer.go [14ms]
+2025-12-08 19:55:31.267 [info] > git ls-files --stage -- game_server_service/gameServer.go [7ms]
+2025-12-08 19:55:31.279 [info] > git cat-file -s 3775cbf81624314e6866d7d7e4f8135631c3eb4d [5ms]
+2025-12-08 19:56:02.073 [info] > git blame --root --incremental 7c2c76f0b49a62d89417c54595d7b7fef5d1ba1d -- game_server_service/gameServer.go [23ms]
+2025-12-08 19:57:24.491 [info] > git show --textconv :game_server_service/gameServer.go [7ms]
+2025-12-08 19:57:24.492 [info] > git ls-files --stage -- game_server_service/gameServer.go [2ms]
+2025-12-08 19:57:24.497 [info] > git cat-file -s 3775cbf81624314e6866d7d7e4f8135631c3eb4d [1ms]

@@ -1,0 +1,11 @@
+#########################
+## My Ghostty Settings ##
+#########################
+
+# Themes can be found using the command: ghostty +list-themes
+theme = Gruvbox Dark
+#theme = catppuccin-mocha
+font-family = Jetbrains Mono
+font-size = 16
+background-opacity = 0.9
+gtk-titlebar = false
