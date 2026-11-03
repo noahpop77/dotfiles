@@ -1,0 +1,64 @@
+[global]
+
+    # Font & Typography
+    font = JetBrains Mono 10
+    line_height = 3
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+
+    # Geometry & Layout
+    width = 380
+    height = 300
+    offset = 20x20
+    origin = top-right
+    notification_limit = 5
+    progress_bar = true
+    progress_bar_height = 6
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 4
+
+    # Visual Appearance
+    corner_radius = 10
+    frame_width = 2
+    separator_height = 2
+    padding = 12
+    horizontal_padding = 16
+    text_icon_padding = 12
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 48
+
+    # Colors - General Theme (Dark Purple Base)
+    # Base background: #1a1625 | Frame border: #6c5ce7
+    background = "#1a1625"
+    foreground = "#f8f8f2"
+    frame_color = "#6c5ce7"
+    separator_color = frame
+
+[urgency_low]
+    # Low Urgency: Subdued slate-purple frame with soft gray-purple text
+    background = "#1a1625"
+    foreground = "#b8b0cb"
+    frame_color = "#4a4063"
+    timeout = 4
+
+[urgency_normal]
+    # Normal Urgency: Dark purple background with bright violet border and clear white text
+    background = "#1a1625"
+    foreground = "#ffffff"
+    frame_color = "#a29bfe"
+    timeout = 6
+
+[urgency_critical]
+    # Critical Urgency: High-contrast magenta/pink border for urgent visibility
+    background = "#1a1625"
+    foreground = "#ffffff"
+    frame_color = "#ff79c6"
+    timeout = 30

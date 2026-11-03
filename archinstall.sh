@@ -28,6 +28,7 @@ sudo pacman -S --needed --noconfirm \
     hyprpaper \
     hypridle \
     hyprlock \
+    hyprshot \
     xdg-desktop-portal-hyprland \
     xdg-desktop-portal-gtk \
     polkit-kde-agent \
@@ -59,19 +60,15 @@ sudo pacman -S --needed --noconfirm \
     luarocks \
     npm \
     firefox \
-    qemu-desktop \
-    virt-manager \
     virt-viewer \
-    libvirt \
-    dnsmasq \
-    iptables-nft \
     dmidecode \
     openbsd-netcat \
     libguestfs \
-    spice-gtk
-    ttf-nerd-fonts-symbols \
-    ttf-nerd-fonts-symbols-mono \
-    ttf-jetbrains-mono-nerd
+    spice-gtk \
+    dunst
+    # ttf-nerd-fonts-symbols \
+    # ttf-nerd-fonts-symbols-mono \
+    # ttf-jetbrains-mono-nerd
 
 
 echo "==> Installing AUR packages (sublime-text-4, fdclone)..."
@@ -120,10 +117,20 @@ if [ -d "$SCRIPT_DIR/Pictures" ]; then
 fi
 
 echo "==> Copying contents of '.config' folder..."
+mkdir -p ~/.config
+
 if [ -d "$SCRIPT_DIR/config" ]; then
-    rm -rf ~/.config
-    cp -r "$SCRIPT_DIR/config" ~/.config
+    cp -r "$SCRIPT_DIR/config/." ~/.config/
     echo ".config contents copied successfully."
+fi
+
+echo "==> Deploying Dunst configuration..."
+if [ -d "$SCRIPT_DIR/dunst" ]; then
+    mkdir -p ~/.config/dunst
+    cp -r "$SCRIPT_DIR/dunst/." ~/.config/dunst/
+    echo "Dunst configuration successfully deployed to ~/.config/dunst/"
+else
+    echo "Warning: 'dunst' directory not found in $SCRIPT_DIR, skipping Dunst deployment."
 fi
 
 echo "==> Configuring ~/.bashrc aliases and gitupdate function..."
@@ -136,6 +143,11 @@ if ! grep -q "gitupdate" "$BASHRC"; then
 # --- Custom Workstation Aliases & Functions ---
 alias ls="ls --color=auto -F"
 alias ll="ls -l --color=auto -Fhoa"
+alias fetch="fastfetch"
+
+gimmie() {
+    sudo pacman -S "$@"
+}
 
 gitupdate() {
     if [ "$1" == "--help" ]; then
