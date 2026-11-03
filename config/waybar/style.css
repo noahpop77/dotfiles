@@ -1,6 +1,6 @@
 * {
   border: none;
-  border-radius: 8;
+  border-radius: 8px;
   font-family: "Jetbrains Mono";
   font-size: 16px;
   min-height: 20px;
@@ -22,6 +22,31 @@ window#waybar.hidden {
   transition: none;
   color: transparent;
   background: transparent;
+}
+
+#custom-discord {
+    margin-top: 6px;
+    margin-bottom: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    font-weight: 500;
+    background: #282828;  /* Matches your workspace background style */
+    color: #fbf1c7;       /* Matches your workspace button text color */
+}
+
+/* Styling when Discord has unread notifications */
+#custom-discord.unread {
+    background: #fe8019;  /* Uses your active accent color (orange) to pop */
+    color: #282828;
+}
+
+/* Styling when Discord is completely closed */
+#custom-discord.offline {
+    background: #282828;
+    color: #504945;       /* Muted dark gray for inactive/offline states */
 }
 
 #workspaces {

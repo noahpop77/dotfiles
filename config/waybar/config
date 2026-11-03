@@ -2,7 +2,7 @@
 	"layer": "top",
 	"modules-left": ["custom/launcher", "backlight", "wireplumber"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["network", "cpu", "memory", "battery", "clock"],
+	"modules-right": ["network", "cpu", "clock"],
 	
   "wireplumber": {
     "tooltip": false,
@@ -14,12 +14,19 @@
       "default": ["", "", ""]
     }
   },
-
+  "custom/discord": {
+    "tooltip": false,
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/discord.sh",
+    "return-type": "json",
+    "interval": 1,
+    "on-click": "hyprctl dispatch focuswindow class:^(discord|vesktop)$ || flatpak run dev.vencord.Vesktop"
+  },
 
   "network": {
     "tooltip": false,
     "format-wifi": "  {essid}",
-    "format-ethernet": "",
+    "format-ethernet": "^_^ Wired",
     "on-click":"ghostty -e nmtui",
 	},
 
@@ -46,13 +53,17 @@
       "format-alt": "{icon} {time}",
       "format-icons": ["", "", "", "", ""]
   },
-
-
   "clock": {
-      "format": "{:%H:%M}",
-      "format-alt": "{:%m-%d-%Y}"
+    "tooltip": false,
+    "format": "{:%m-%d-%Y - %I:%M %p}",
+    "format-alt": "{:%m-%d-%Y - %H:%M}"
   },
 
+  // "clock": {
+  //     "tooltip": false,
+  //     "format": "{:%m-%d-%Y - %H:%M}",
+  // },
+  //
 
   "cpu": {
       "interval": 15,
@@ -86,8 +97,8 @@
 
   "custom/launcher":{
       "format": " ",
-      "on-click": "sh ~/.config/rofi/launchers/type-2/launcher.sh",
-      "on-click-right": "killall rofi"
+      "on-click": "wofi",
+      // "on-click-right": "killall rofi"
   },
 
 
