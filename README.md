@@ -1,6 +1,15 @@
 # My Configs
 I really hate setting things up more than once so its time to do things properly and version control my config files
 
+
+# INSANELY Useful Tools
+
+### openrgb
+> RGB PC controll
+
+Lets me controll the RGB lighting options on all of my hardware with NO HASSLE and is a very nice rool.
+
+
 # VIM Keybinds
 
 ### CTRL + p
