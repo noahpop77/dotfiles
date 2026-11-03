@@ -7,8 +7,23 @@ I really hate setting things up more than once so its time to do things properly
 ### openrgb
 > RGB PC controll
 
-Lets me controll the RGB lighting options on all of my hardware with NO HASSLE and is a very nice rool.
+Lets me controll the RGB lighting options on all of my hardware with NO HASSLE and is a very nice rool
 
+### whostehre
+> Simple network scanning tool
+
+Lets me see what devices are on my network really nicely and cleanly
+
+```
+Install: yay -S whosthere-bin
+
+Usage: whosthere 
+```
+
+### mpv
+> Free media player (built for the cli), good VLC replacement (https://github.com/mpv-player/mpv)
+
+VLC on arch and some linux systems complains about codecs and has a ui scaling problem. `mpv` works out of the box
 
 # VIM Keybinds
 
