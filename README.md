@@ -9,7 +9,7 @@ I really hate setting things up more than once so its time to do things properly
 
 Lets me controll the RGB lighting options on all of my hardware with NO HASSLE and is a very nice rool
 
-### whostehre
+### whosthere
 > Simple network scanning tool
 
 Lets me see what devices are on my network really nicely and cleanly
