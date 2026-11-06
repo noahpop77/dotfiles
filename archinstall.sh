@@ -60,11 +60,13 @@ sudo pacman -S --needed --noconfirm \
     luarocks \
     npm \
     firefox \
+    zen-browser \
     virt-viewer \
     dmidecode \
     openbsd-netcat \
     libguestfs \
     spice-gtk \
+    mpv \
     dunst
     # ttf-nerd-fonts-symbols \
     # ttf-nerd-fonts-symbols-mono \
@@ -77,18 +79,14 @@ $AUR_HELPER -S --needed --noconfirm sublime-text-4 fdclone
 echo "==> Installing Tree-sitter CLI for Neovim globally via npm..."
 sudo npm install -g tree-sitter-cli
 
-echo "==> Setting up SDDM and Astronaut theme..."
-if [ ! -d "/usr/share/sddm/themes/sddm-astronaut-theme" ]; then
-    sudo git clone -b master --depth 1 https://github.com/keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
-else
-    echo "sddm-astronaut-theme already exists, pulling latest changes..."
-    sudo git -C /usr/share/sddm/themes/sddm-astronaut-theme pull
+echo "==> Setting up SDDM and Rukia Theme..."
+if [ ! -d "/usr/share/sddm/themes/rukia" ]; then
+    sudo cp -r $SCRIPT_DIR/rukia /usr/share/sddm/themes/
+    sudo cp -r /usr/share/sddm/themes/rukia/Fonts/* /usr/share/fonts/
 fi
 
-sudo cp -r /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
-
 echo "[Theme]
-Current=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
+Current=rukia" | sudo tee /etc/sddm.conf
 
 sudo mkdir -p /etc/sddm.conf.d
 echo "[General]
@@ -140,15 +138,24 @@ touch "$BASHRC"
 if ! grep -q "gitupdate" "$BASHRC"; then
     cat << 'EOF' >> "$BASHRC"
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+
 # --- Custom Workstation Aliases & Functions ---
 alias ls="ls --color=auto -F"
 alias ll="ls -l --color=auto -Fhoa"
-alias fetch="fastfetch"
+alias fetch="fastfetch -l ~/.config/ReaperBadge.txt"
+alias hype="nvim ~/.config/hypr/hyprland.lua"
+alias cl="clear"
+alias vial="QT_SCALE_FACTOR=1.5 vial"
 
 gimmie() {
     sudo pacman -S "$@"
 }
-
 gitupdate() {
     if [ "$1" == "--help" ]; then
         echo "Usage: gitupdate {commit message}"
@@ -165,6 +172,7 @@ gitupdate() {
     git commit -m "$*"
     git push origin main
 }
+
 EOF
     echo "Aliases and gitupdate function added to ~/.bashrc."
 fi
