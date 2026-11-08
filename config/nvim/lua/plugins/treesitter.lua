@@ -21,12 +21,57 @@
 -- }
 
 
+-- return {
+--     "nvim-treesitter/nvim-treesitter",
+--     lazy = false,
+--     build = ":TSUpdate",
+--
+--     config = function()
+--         vim.api.nvim_create_autocmd("FileType", {
+--             pattern = {
+--                 "lua",
+--                 "c",
+--                 "cpp",
+--                 "go",
+--                 "python",
+--                 "zig",
+--                 "bash",
+--                 "json",
+--                 "yaml",
+--             },
+--             callback = function()
+--                 vim.treesitter.start()
+--             end,
+--         })
+--     end,
+-- }
+
 return {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
     build = ":TSUpdate",
+    main = "nvim-treesitter",
+    opts = {
+        ensure_installed = {
+            "lua",
+            "c",
+            "cpp",
+            "go",
+            "python",
+            "zig",
+            "bash",
+            "json",
+            "yaml",
+        },
+        auto_install = true,
+        highlight = {
+            enable = true,
+        },
+    },
+    config = function(_, opts)
+        require("nvim-treesitter").setup(opts)
 
-    config = function()
+        -- FileType autocmd for starting treesitter
         vim.api.nvim_create_autocmd("FileType", {
             pattern = {
                 "lua",
@@ -40,7 +85,7 @@ return {
                 "yaml",
             },
             callback = function()
-                vim.treesitter.start()
+                pcall(vim.treesitter.start)
             end,
         })
     end,
