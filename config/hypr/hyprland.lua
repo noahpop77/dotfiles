@@ -31,6 +31,8 @@ hl.monitor({
 local terminal    = "ghostty"
 local fileManager = "nautilus"
 local menu        = "wofi --show drun"
+-- local menu        = "rofi -show drun"    -- My alternate launcher with different theme
+
 -- local menu        = "hyprlauncher"
 
 
