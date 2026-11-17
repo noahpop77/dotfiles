@@ -1,8 +1,8 @@
-width=800
-height=350
+width=400
+height=550
 location=center
 show=drun
-prompt=Search...
+prompt=Whats cookin :)
 filter_rate=100
 allow_markup=true
 no_actions=true

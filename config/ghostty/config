@@ -3,9 +3,11 @@
 #########################
 
 # Themes can be found using the command: ghostty +list-themes
+
 theme = Gruvbox Dark
-#theme = catppuccin-mocha
+# theme = Front End Delight
+
 font-family = Jetbrains Mono
-font-size = 16
+font-size = 13
 background-opacity = 0.9
 gtk-titlebar = false

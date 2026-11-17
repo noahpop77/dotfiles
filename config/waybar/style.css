@@ -3,7 +3,7 @@
   border-radius: 8px;
   font-family: "Jetbrains Mono";
   font-size: 16px;
-  min-height: 20px;
+  min-height: 10px;
 }
 
 window#waybar {

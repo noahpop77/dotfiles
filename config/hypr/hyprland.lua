@@ -10,6 +10,16 @@
 -- require("myColors")
 
 
+-- A function I added to fix scaling for apps like Vial.
+-- TODO: I need to understand exactly what this does.
+hl.config({
+    xwayland={
+        force_zero_scaling=true
+    }
+})
+
+
+
 ------------------
 ---- MONITORS ----
 ------------------
@@ -19,7 +29,8 @@ hl.monitor({
     output   = "",
     mode     = "preferred",
     position = "auto",
-    scale    = "1",
+    scale    = "1.5",
+    bitdepth = 10, -- SETS COLOR MORE TO 10 BIT, default is 8 bit
 })
 
 
@@ -53,6 +64,7 @@ local menu        = "wofi --show drun"
 
 hl.on("hyprland.start", function ()
   hl.exec_cmd(terminal)
+  hl.exec_cmd("zen-browser")
   hl.exec_cmd("waybar & hyprpaper & swaync & hypridle")
 end)
 
@@ -92,14 +104,17 @@ hl.env("HYPRCURSOR_SIZE", "24")
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
-        gaps_in  = 5,
-        gaps_out = 20,
+        gaps_in  = 4,
+        gaps_out = 8,
 
-        border_size = 2,
+        -- Increased border thickness for better visibility
+        border_size = 3,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            -- Brighter, highly visible slate purple for the active window
+            active_border   = "rgba(5b4e99ee)",
+            -- Fully transparent border for inactive windows
+            inactive_border = "rgba(00000000)",
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -112,15 +127,16 @@ hl.config({
     },
 
     decoration = {
-        rounding       = 10,
+        rounding       = 6,
         rounding_power = 2,
 
         -- Change transparency of focused and unfocused windows
         active_opacity   = 1.0,
         inactive_opacity = 1.0,
 
+        -- Disabled drop shadow (no glow)
         shadow = {
-            enabled      = true,
+            enabled      = false,
             range        = 4,
             render_power = 3,
             color        = 0xee1a1a1a,
@@ -138,6 +154,7 @@ hl.config({
         enabled = true,
     },
 })
+
 
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
 hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })
@@ -232,7 +249,7 @@ hl.config({
 
         follow_mouse = 1,
 
-        sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
+        sensitivity = -0.4, -- -1.0 - 1.0, 0 means no modification.
 
         touchpad = {
             natural_scroll = true,
@@ -263,7 +280,14 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 --- CUSTOM BINDs ----
 ---------------------
 
-hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
+-- Standard Lua wrapper table/function syntax
+-- Standard Lua wrapper syntax
+
+
+
+
+
+hl.bind("HOME", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 -----------------------
 
@@ -274,7 +298,7 @@ local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 

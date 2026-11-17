@@ -1,7 +1,7 @@
 window {
     font-size: 22;
     border-radius: 10px;
-    background-color: rgba(30, 30, 30, 0.95); /* Optional: Gruvbox-dark background */
+    background-color: rgba(30, 30, 30, 0.75); /* Optional: Gruvbox-dark background */
     color: #ebdbb2;
 }
 
@@ -11,7 +11,7 @@ window {
    	padding-left: 20px;
 	border: none;
     color: #8ec07c;
-    background-color: #282828;
+    background-color: rgba(40, 40, 40, 0.5);
     border-radius: 10px;
     margin: 5px;
     margin-bottom: 2px;
@@ -28,14 +28,14 @@ window {
 	padding-left: 15px;
 	padding-right: 15px;
 	color: #ebdbb2;
-	background-color: #282828;
+	background-color: rgba(40, 40, 40, 0.4);
 	border-radius: 10px;
 }
 
 #outer-box {
     margin: 0px;
 	border-radius: 10px;
-	background-color: #282828;
+	background-color: rgba(40, 40, 40, 0.4);
 }
 
 #scroll {
@@ -53,6 +53,6 @@ window {
 #entry:selected {
 	border: 10px;
 	border-radius: 10px;
-	background-color: #d65d0e; /* Highlight selected entry in orange */
+	background-color: rgba(214, 93, 14, 0.8); /* Highlight selected entry in orange */
 	color: #282828;
 }
