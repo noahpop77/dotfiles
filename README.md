@@ -2,6 +2,13 @@
 I really hate setting things up more than once so its time to do things properly and version control my config files
 
 
+# Custom Scripts
+
+### pretty.sh
+
+Script I wrote to deploy 3 aesthetic windows on workspace 5 of my Hyprland Desktop
+so that I can take pretty screenshots.
+
 # INSANELY Useful Tools
 
 ### openrgb
