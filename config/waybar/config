@@ -2,7 +2,7 @@
 	"layer": "top",
 	"modules-left": ["custom/launcher", "backlight", "wireplumber"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["network", "cpu", "clock"],
+	"modules-right": ["custom/face", "network", "cpu", "clock"],
 	
   "wireplumber": {
     "tooltip": false,
@@ -121,4 +121,11 @@
     "active": "",
     "sort-by-number": true
   },
+
+  "custom/face": {
+    "format": "0_0",
+    "tooltip": false,
+    "on-click": "mpv --no-video --no-terminal ~/.config/waybar/beep.mp3 >/dev/null 2>&1 &"
+  }
 }
+
