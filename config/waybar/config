@@ -125,7 +125,7 @@
   "custom/face": {
     "format": "0_0",
     "tooltip": false,
-    "on-click": "mpv --no-video --no-terminal ~/.config/waybar/beep.mp3 >/dev/null 2>&1 &"
+    "on-click": "mpv --volume=50 --no-video --no-terminal ~/.config/waybar/beep.mp3 >/dev/null 2>&1 &"
   }
 }
 
