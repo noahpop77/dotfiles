@@ -153,6 +153,21 @@ alias hype="nvim ~/.config/hypr/hyprland.lua"
 alias cl="clear"
 alias vial="QT_SCALE_FACTOR=1.5 vial"
 
+runbg() {
+  if [ "$#" -eq 0 ]; then
+    echo "runbg: missing command" >&2
+    return 1
+  fi
+
+  if ! command -v -- "$1" >/dev/null 2>&1; then
+    echo "runbg: command not found: $1" >&2
+    return 1
+  fi
+
+  nohup "$@" >/dev/null 2>&1 &
+  disown
+}
+
 gimmie() {
     sudo pacman -S "$@"
 }
